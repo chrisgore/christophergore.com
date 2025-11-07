@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Gore - AI & Digital Transformation Expert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            z-index: 0;
+            background-image: 
+                linear-gradient(30deg, #00d4ff 12%, transparent 12.5%, transparent 87%, #00d4ff 87.5%, #00d4ff),
+                linear-gradient(150deg, #00d4ff 12%, transparent 12.5%, transparent 87%, #00d4ff 87.5%, #00d4ff),
+                linear-gradient(30deg, #00d4ff 12%, transparent 12.5%, transparent 87%, #00d4ff 87.5%, #00d4ff),
+                linear-gradient(150deg, #00d4ff 12%, transparent 12.5%, transparent 87%, #00d4ff 87.5%, #00d4ff);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { background-position: 0 0, 0 0, 40px 70px, 40px 70px; }
+            100% { background-position: 80px 140px, 80px 140px, 120px 210px, 120px 210px; }
+        }
+
+        header {
+            position: relative;
+            z-index: 10;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00d4ff;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 10;
+            padding: 60px 0 80px;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            margin: 0 auto 40px;
+            border: 4px solid #00d4ff;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+            object-fit: cover;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.3); }
+            50% { box-shadow: 0 0 60px rgba(0, 212, 255, 0.5); }
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: 700;
+            animation: slideDown 1s ease-out 0.2s both;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-weight: 500;
+            animation: slideDown 1s ease-out 0.4s both;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            color: #b0b0b0;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            animation: slideDown 1s ease-out 0.6s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: #0a0a0a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+            animation: slideDown 1s ease-out 0.8s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .clients {
+            position: relative;
+            z-index: 10;
+            padding: 60px 0;
+            text-align: center;
+            background: rgba(20, 20, 40, 0.5);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-in 1s both;
+        }
+
+        .clients h3 {
+            font-size: 1rem;
+            color: #808080;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .client-logo {
+            font-size: 1.3rem;
+            color: #606060;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .client-logo:hover {
+            color: #00d4ff;
+        }
+
+        .stats {
+            position: relative;
+            z-index: 10;
+            padding: 60px 0;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            animation: fadeIn 1.5s ease-in 1.2s both;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+        }
+
+        .approach {
+            position: relative;
+            z-index: 10;
+            padding: 80px 0;
+            animation: fadeIn 1.5s ease-in 1.4s both;
+        }
+
+        .approach h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .approach-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #808080;
+            margin-bottom: 60px;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .approach-card {
+            background: rgba(30, 30, 50, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .approach-card h3 {
+            font-size: 1.5rem;
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+
+        .approach-card p {
+            color: #c0c0c0;
+            line-height: 1.8;
+        }
+
+        footer {
+            position: relative;
+            z-index: 10;
+            padding: 60px 0 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info {
+            margin-bottom: 25px;
+        }
+
+        .contact-info a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.05rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #ffffff;
+        }
+
+        .social-links {
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50%;
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            color: #606060;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-image {
+                width: 220px;
+                height: 220px;
+            }
+
+            .stats {
+                gap: 40px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .approach h2 {
+                font-size: 1.8rem;
+            }
+
+            .client-logos {
+                gap: 30px;
+            }
+
+            .client-logo {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+
+    <header>
+        <div class="container">
+            <div class="logo">CHRISTOPHER GORE</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <img src="profile.jpg" alt="Christopher Gore" class="hero-image">
+            <h1>AI Doesn't Have to Be Complicated</h1>
+            <p class="tagline">Let's Make It Work for Your Business</p>
+            <p class="subtitle">25 years leading digital transformation for Fortune 500 companies. Now helping businesses like yours unlock AI's potential—without the corporate BS.</p>
+            <a href="#contact" class="cta-button">Let's Talk Strategy</a>
+        </div>
+    </section>
+
+    <section class="clients">
+        <div class="container">
+            <h3>Trusted By</h3>
+            <div class="client-logos">
+                <div class="client-logo">BANK OF TOKYO</div>
+                <div class="client-logo">CDC</div>
+                <div class="client-logo">HHS</div>
+                <div class="client-logo">ERNST & YOUNG</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat">
+            <div class="stat-number">$3M+</div>
+            <div class="stat-label">Saved for Clients</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Users Supported</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">25</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+    </section>
+
+    <section class="approach">
+        <div class="container">
+            <h2>No Jargon. No Fear. Just Results.</h2>
+            <p class="approach-subtitle">Here's how I help businesses like yours succeed</p>
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <h3>I Get It</h3>
+                    <p>Most people don't understand AI—and that's okay. I explain it like we're grabbing coffee, not sitting in a boardroom. No tech speak, just straight talk about what works.</p>
+                </div>
+                <div class="approach-card">
+                    <h3>I've Done It</h3>
+                    <p>From Fortune 500 to federal agencies, I've built AI and automation solutions that actually deliver. Not theory—real implementations that save money and drive results.</p>
+                </div>
+                <div class="approach-card">
+                    <h3>I'm Here to Help</h3>
+                    <p>Whether it's automation, strategy, or just figuring out where to start—I've got you. Think of me as the guy you play pickleball with who also happens to know AI inside and out.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="contact-info">
+                <a href="tel:7708421807">(770) 842-1807</a>
+                <a href="mailto:me@christophergore.com">me@christophergore.com</a>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/christophergore" target="_blank" aria-label="LinkedIn">in</a>
+            </div>
+            <p class="copyright">&copy; 2025 Christopher Gore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
